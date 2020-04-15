@@ -1,19 +1,22 @@
 import pyAesCrypt
 import zipfile
 import ast
+import os
 
 from os import stat, remove
 from Crypto.PublicKey import RSA
 
 # This function takes a file and generates a zip with name as filename.zip
 def compressFile(filename):
+    head, tail = os.path.split(filename)
     with zipfile.ZipFile(filename + '.zip', mode='w') as zipOut:
-        zipOut.write(filename, compress_type=zipfile.ZIP_DEFLATED)
+        zipOut.write(filename, arcname=tail, compress_type=zipfile.ZIP_DEFLATED)
 
 # Function to decompress a zip file
 def uncompressFile(filename):
+    head, tail = os.path.split(filename)
     with zipfile.ZipFile(filename, mode='r') as zipIn:
-        zipIn.extractall()
+        zipIn.extractall(path=head)
 
 # This function encrypts the data using a public key. Please note that the data has to be smaller
 # than the size of the public key that you are using.

@@ -21,7 +21,7 @@ This is a sample code to allow one to zip & encrypt a csv using AES 256 for secu
 - A can now encrypt the files using this lib by issuing the following command
 ```
     python3 encrypt.py file.csv public.pem
-    # file.csv is the csv file that needs to be transferred securely and public.pem points to the location of the public.pem that was received from B
+    # file.csv is the csv file that needs to be transferred securely and public.pem points to the location of the public.pem that was received from B. These files are assumed to be copied to the src folder
 ```
 - A can now transfer the file.csv.dat file (zip and encrypted) that was created by encrypt.py over a secure channel to B. The file is encrypted and a third party who gets access will not be able to decipher the file. However it is recommended that we use a secure channel for transmitting this file.
 
