@@ -20,10 +20,11 @@ with open(filename, 'rb') as fIn:
 
     # Read the encrypted zip, decrypt it and write to a filename called retrieved.zip 
     with open(filename + '.crypt', 'rb') as cipherIn:
-        with open('retrieved.zip', "wb") as fOut:
+        with open(filename + 'retrieved.zip', "wb") as fOut:
             decryptFileWithAESKey(filename + '.crypt', cipherIn, fOut, password)
 
 # Uncomment the uncompressFile invocation if you want to retrive the contents of the zip.
 # I have left this commented as it will override the input file.
-# uncompressFile('retrieved.zip')
+uncompressFile(filename + 'retrieved.zip')
 remove(filename + '.crypt')
+remove(filename + 'retrieved.zip')

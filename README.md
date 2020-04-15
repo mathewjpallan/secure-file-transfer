@@ -14,7 +14,7 @@ This is a sample code to allow one to zip & encrypt a csv using AES 256 for secu
 - B shares the public key (public.pem) with A over any channel (need not be secure channel)
 
 ### Actions by sender
-- A clones this repo and cd to the cloned repo and executes the following commands
+- A clones this repo and cd to the cloned repo src folder and executes the following commands
 ```
     pip3 install -r requirements.txt
 ```
@@ -26,7 +26,7 @@ This is a sample code to allow one to zip & encrypt a csv using AES 256 for secu
 - A can now transfer the file.csv.dat file (zip and encrypted) that was created by encrypt.py over a secure channel to B. The file is encrypted and a third party who gets access will not be able to decipher the file. However it is recommended that we use a secure channel for transmitting this file.
 
 ### Actions by Receiver
-- B clones this repo and cd to the cloned repo and executes the following commands
+- B clones this repo and cd to the cloned repo src folder and executes the following commands
 ```
     pip3 install -r requirements.txt
 ```
