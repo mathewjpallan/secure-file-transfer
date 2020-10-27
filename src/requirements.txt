@@ -1,6 +1,6 @@
 autopep8==1.5.1
 cffi==1.14.0
-cryptography==2.9
+cryptography==3.2
 pyAesCrypt==0.4.3
 pycodestyle==2.5.0
 pycparser==2.20
